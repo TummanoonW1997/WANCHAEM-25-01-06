@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: wanchaem-25-01-06
+    restart: always
+    build:
+      context: .
+      target: prod
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - 8082:4000
+    command: node ./index.js
